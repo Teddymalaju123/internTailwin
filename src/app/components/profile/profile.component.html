@@ -1,0 +1,40 @@
+<div class="container mx-auto">
+  <div class="bg-red-600">
+    <div class="p-5">
+      <div class="mt-6">
+        <div class="grid justify-items-center">
+          <img [src]="this.profile.avatar" class="rounded-full border-4 border-white h-4/12 w-4/12" alt="" />
+          <div class="mt-4">
+            <p class="text-xl">{{this.profile.name}}</p>
+            <p class="text-sm">{{this.profile.job}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-slate-300">
+    <div class="grid gap-2 grid-cols-2">
+      <div class="grid justify-items-center  mt-4  mb-4 border-4 border-indigo-200  border-r-indigo-500 border-solid">
+        <p class="text-red-900">{{this.profile.followers | thousandSuff}}</p>
+        <p>Followers</p>
+      </div>
+      <div class="grid justify-items-center  mt-4 mb-4">
+        <p class="text-red-900">{{this.profile.following | thousandSuff}}</p>
+        <p>Following</p>
+      </div>
+    </div>
+  </div>
+  <div class="p-4">
+    <div class="bg-red-600 mt-4 p-3" *ngFor="let item of task" (click)="detail(item)">
+      <p class="text-white">{{item.name}}</p>
+      <p class="text-white">Date : {{item.date | dateFormat}}</p>
+    </div>
+  </div>
+  <div class="bg-slate-300 absolute bottom-0 w-full">
+    <div class="grid grid-cols-1">
+      <div class="grid  ">
+        <p class="p-2">10 Tasks remain</p>
+      </div>
+    </div>
+  </div>
+</div>

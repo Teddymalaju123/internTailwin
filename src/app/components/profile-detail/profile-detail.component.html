@@ -1,0 +1,28 @@
+<div class="container mx-auto">
+  <div class="bg-red-900 w-full">
+    <div class="flex p-4">
+      <div class="flex-none w-14 ">
+        <p (click)="back()" class="text-white">back</p>
+      </div>
+      <div class="flex-initial w-32 ...">
+      </div>
+      <div class="flex-initial w-64 ...">
+        <p class="text-white"> Tasks Detail</p>
+      </div>
+    </div>
+  </div>
+  <div class="bg-red-600">
+    <div class="p-5">
+      <div class="grid justify-items-start">
+        <div class="mt-4">
+          <p class="text-xl text-white">{{this.task.name}}</p>
+          <p class="text-sm text-white">Date : {{this.task.date | dateFormat }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p-8">
+    <p>{{this.task.description}}</p>
+  </div>
+
+</div>
