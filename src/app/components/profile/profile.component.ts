@@ -22,7 +22,6 @@ export class ProfileComponent implements OnInit {
   }
 
   profile!: Avartar;
-  task: Task[] = [];
   getReportProblem(): void {
     this.service.getProfile().subscribe({
       next: (response: any) => {
@@ -33,6 +32,7 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  task: Task[] = [];
   getTask(): void {
     this.service.getTask().subscribe({
       next: (response: any) => {
@@ -42,6 +42,7 @@ export class ProfileComponent implements OnInit {
       }
     });
   }
+
   detail(task: Task) {
     this.router.navigate(['/profile-detail'], {
       queryParams: {
