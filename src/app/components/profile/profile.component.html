@@ -1,5 +1,5 @@
 <div class="container mx-auto">
-  <div class="bg-red-600">
+  <div class="bg-red-800">
     <div class="p-5">
       <div class="mt-6">
         <div class="grid justify-items-center">
@@ -12,7 +12,7 @@
       </div>
     </div>
   </div>
-  <div class="bg-slate-300">
+  <div class="rounded-lg bg-slate-300">
     <div class="grid gap-2 grid-cols-2">
       <div class="grid justify-items-center  mt-4  mb-4 border-4 border-indigo-200  border-r-indigo-500 border-solid">
         <p class="text-red-900">{{this.profile.followers | thousandSuff}}</p>
@@ -25,7 +25,7 @@
     </div>
   </div>
   <div class="p-4">
-    <div class="bg-red-600 mt-4 p-3" *ngFor="let item of task" (click)="detail(item)">
+    <div class="bg-red-700 mt-4 p-3" *ngFor="let item of task" (click)="detail(item)">
       <p class="text-white">{{item.name}}</p>
       <p class="text-white">Date : {{item.date | dateFormat}}</p>
     </div>
