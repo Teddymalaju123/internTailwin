@@ -12,6 +12,7 @@ import { SharedAppModule } from './shared/shared-app.module';
 import { ProfileDetailComponent } from './components/profile-detail/profile-detail.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
