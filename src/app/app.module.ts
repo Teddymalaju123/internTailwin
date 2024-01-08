@@ -1,5 +1,5 @@
 
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,6 +10,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ProfileService } from './shared/service/profile.service';
 import { SharedAppModule } from './shared/shared-app.module';
 import { ProfileDetailComponent } from './components/profile-detail/profile-detail.component';
+import { SpinnerLoadModule } from './shared/components/spinner-load/spinner-load.module';
+import { SpinnerInterceptorService } from './shared/interceptor/spinner-interceptor.service';
 
 
 
@@ -20,6 +22,7 @@ import { ProfileDetailComponent } from './components/profile-detail/profile-deta
     ProfileDetailComponent
   ],
   imports: [
+    SpinnerLoadModule,
     SharedAppModule,
     FormsModule,
     HttpClientModule,
@@ -27,7 +30,7 @@ import { ProfileDetailComponent } from './components/profile-detail/profile-deta
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ProfileService],
+  providers: [ProfileService, { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
