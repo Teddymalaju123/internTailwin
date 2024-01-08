@@ -14,6 +14,9 @@ import { Avartar } from '../../shared/interface/Avartar';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  profile!: Avartar;
+  task: Task[] = [];
+
   private service = inject(ProfileService);
   private router = inject(Router);
   ngOnInit(): void {
@@ -21,7 +24,7 @@ export class ProfileComponent implements OnInit {
     this.getTask();
   }
 
-  profile!: Avartar;
+
   getReportProblem(): void {
     this.service.getProfile().subscribe({
       next: (response: any) => {
@@ -32,7 +35,6 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  task: Task[] = [];
   getTask(): void {
     this.service.getTask().subscribe({
       next: (response: any) => {

@@ -9,7 +9,8 @@ import { Location } from '@angular/common'
   styleUrls: ['./profile-detail.component.css']
 })
 export class ProfileDetailComponent implements OnInit {
-
+  task!: Task;
+  
   private location = inject(Location);
   private _activatedRoute = inject(ActivatedRoute);
   private service = inject(ProfileService);
@@ -27,7 +28,7 @@ export class ProfileDetailComponent implements OnInit {
     this.location.back()
   }
 
-  task!: Task;
+  
   getTaskDetail(id: Number): void {
     this.service.getMessageTask(id).subscribe({
       next: (response: any) => {
