@@ -17,8 +17,8 @@ export class ProfileComponent implements OnInit {
   profile!: Avartar;
   task: Task[] = [];
 
-  private service = inject(ProfileService);
-  private router = inject(Router);
+  private _service = inject(ProfileService);
+  private _router = inject(Router);
   ngOnInit(): void {
     this.getReportProblem()
     this.getTask();
@@ -26,7 +26,7 @@ export class ProfileComponent implements OnInit {
 
 
   getReportProblem(): void {
-    this.service.getProfile().subscribe({
+    this._service.getProfile().subscribe({
       next: (response: any) => {
         this.profile = response;
       },
@@ -36,7 +36,7 @@ export class ProfileComponent implements OnInit {
   }
 
   getTask(): void {
-    this.service.getTask().subscribe({
+    this._service.getTask().subscribe({
       next: (response: any) => {
         this.task = response
       },
@@ -46,7 +46,7 @@ export class ProfileComponent implements OnInit {
   }
 
   detail(task: Task) {
-    this.router.navigate(['/profile-detail'], {
+    this._router.navigate(['/profile-detail'], {
       queryParams: {
         id: task.id
       }

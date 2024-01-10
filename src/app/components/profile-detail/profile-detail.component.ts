@@ -13,7 +13,7 @@ export class ProfileDetailComponent implements OnInit {
   
   private location = inject(Location);
   private _activatedRoute = inject(ActivatedRoute);
-  private service = inject(ProfileService);
+  private _service = inject(ProfileService);
 
 
 
@@ -30,7 +30,7 @@ export class ProfileDetailComponent implements OnInit {
 
   
   getTaskDetail(id: Number): void {
-    this.service.getMessageTask(id).subscribe({
+    this._service.getMessageTask(id).subscribe({
       next: (response: any) => {
         this.task = response
       },
