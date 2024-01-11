@@ -53,4 +53,16 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  createtask(){
+    this._router.navigate(['/create-task']),{
+      
+    }
+  }
+
+  edittask(){
+    this._router.navigate(['/edit-task']),{
+      
+    }
+  }
+
 }

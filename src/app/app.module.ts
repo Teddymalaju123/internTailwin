@@ -12,6 +12,10 @@ import { SharedAppModule } from './shared/shared-app.module';
 import { ProfileDetailComponent } from './components/profile-detail/profile-detail.component';
 import { SpinnerLoadModule } from './shared/components/spinner-load/spinner-load.module';
 import { SpinnerInterceptorService } from './shared/interceptor/spinner-interceptor.service';
+import { CreateTaskComponent } from './components/create-task/create-task.component';
+import { EditTaskComponent } from './components/edit-task/edit-task.component';
+
+
 
 
 
@@ -19,7 +23,9 @@ import { SpinnerInterceptorService } from './shared/interceptor/spinner-intercep
   declarations: [
     AppComponent,
     ProfileComponent,
-    ProfileDetailComponent
+    ProfileDetailComponent,
+    CreateTaskComponent,
+    EditTaskComponent
   ],
   imports: [
     SpinnerLoadModule,
@@ -28,7 +34,9 @@ import { SpinnerInterceptorService } from './shared/interceptor/spinner-intercep
     HttpClientModule,
     ReactiveFormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+
+    
   ],
   providers: [ProfileService, { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptorService, multi: true }],
   bootstrap: [AppComponent]
