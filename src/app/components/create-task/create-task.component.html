@@ -15,11 +15,11 @@
       <div class="p-5">
         <div class="grid justify-items-start">
           <div class="mt-4">
-            <form>
-            <p class="text-sm text-black">Topic</p>
-            <input  class="bg-gray-300 rounded-md border-solid border-2 border-red-900 pr-44 mt-2" type="text" formControlName="topic">
-            <p class="text-sm text-black mt-4">Description</p>
-            <textarea class="bg-gray-300 rounded-md border-solid border-2 border-red-900 pr-52 pb-32 mt-2" type="text" formControlName="description"></textarea>
+            <form [formGroup]="validateForm">
+            <p class="text-sm text-black" for="topic">Topic</p>
+            <input  class="bg-gray-300 rounded-md border-solid border-2 border-red-900 pr-44 mt-2" type="text" id="topic" formControlName="topic">
+            <p class="text-sm text-black mt-4" for="description">Description</p>
+            <textarea class="bg-gray-300 rounded-md border-solid border-2 border-red-900 pr-52 pb-32 mt-2" type="text" id="topic" formControlName="description"></textarea>
             </form>
           </div>
         </div>
@@ -28,7 +28,7 @@
     <div class="bg-slate-300 absolute bottom-0 w-full">
 
           <div class="grid ">
-            <button class="bg-green-500 border-solid border-2 border-sky-500 text-black not-italic text-sm pt-3 pb-3" (click)="submit()">Submit</button>
+            <button class="bg-green-500 border-solid border-2 border-sky-500 text-black not-italic text-sm pt-3 pb-3" (click)="createTopic()">Submit</button>
           </div>
 
       </div>
