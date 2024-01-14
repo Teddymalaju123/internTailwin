@@ -29,7 +29,7 @@
       เพิ่ม Task
     </button> 
   </div>
-  <div class="p-4" *ngIf="local">
+  <!-- <div class="p-4" *ngIf="local">
     <div class="bg-red-700 mt-4 p-3">
       <div class="flex justify-between ...">
         <p class="text-white">{{ local.topic }}</p>
@@ -42,22 +42,22 @@
         <button class="bg-amber-600 rounded-md border-solid border-2 border-rose-500 px-6 text-black not-italic text-sm fa-solid fa-trash" (click)="deleteTask()">ลบ</button>
       </div>
     </div>
-  </div>
+  </div> -->
   
-  <!-- <div class="p-4">
-    <div class="bg-red-700 mt-4 p-3" *ngFor="let item of task" (click)="detail(item)">
+  <div class="p-4">
+    <div class="bg-red-700 mt-4 p-3" *ngFor="let item of tasks" (click)="detail(item)">
       <div class="flex justify-between ...">
-      <p class="text-white">{{item.name}}</p>
-        <button class="bg-amber-600 rounded-md border-solid border-2 border-rose-500 px-3 text-black not-italic text-sm fa-sharp fa-solid fa-pen-to-square" (click)="edittask()">
+      <p class="text-white">{{item.topic}}</p>
+        <button class="bg-amber-600 rounded-md border-solid border-2 border-rose-500 px-3 text-black not-italic text-sm fa-sharp fa-solid fa-pen-to-square" (click)="edittask(item.id)">
           แก้ไข
         </button>
       </div>
       <div class="flex justify-between mt-3">
         <p class="text-white">Date : {{item.date | dateFormat}}</p>
-        <button class="bg-amber-600 rounded-md border-solid border-2 border-rose-500 px-6 text-black not-italic text-sm fa-solid fa-trash" (click)="createtask()">ลบ</button>
+        <button class="bg-amber-600 rounded-md border-solid border-2 border-rose-500 px-6 text-black not-italic text-sm fa-solid fa-trash" (click)="deleteTask(item.id)">ลบ</button>
       </div>
     </div>
-  </div> -->
+  </div>
   <div class="bg-slate-300 absolute bottom-0 w-full">
     <div class="grid grid-cols-1">
       <div class="grid  ">

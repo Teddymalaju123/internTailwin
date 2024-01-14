@@ -1,4 +1,6 @@
 export interface LocalTask {
-    topic: string
-    description: string
+  id: number;
+  topic: string;
+  description: string;
+  date: string;
   }
