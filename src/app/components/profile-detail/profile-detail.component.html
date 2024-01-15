@@ -13,15 +13,15 @@
   </div>
   <div class="bg-red-600">
     <div class="p-5">
-      <div class="grid justify-items-start">
+      <div class="grid justify-items-start" *ngIf="tasksLocal && tasksLocal.length > 0">
         <div class="mt-4">
-          <p class="text-xl text-white">{{this.task.name}}</p>
-          <p class="text-sm text-white">Date : {{this.task.date | dateFormat }}</p>
+          <p class="text-xl text-white">{{tasksLocal[0].topic}}</p>
+          <p class="text-sm text-white">Date : {{tasksLocal[0].date| dateFormat }}</p>
         </div>
       </div>
     </div>
   </div>
   <div class="p-8">
-    <p>{{this.task.description}}</p>
+    <p>{{tasksLocal[0].description}}</p>
   </div>
 </div>

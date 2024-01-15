@@ -72,6 +72,14 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  detailLocal(taskID: Task) {
+    this._router.navigate(['/profile-detail'], {
+      queryParams: {
+        id: taskID
+      }
+    });
+  }
+
   createtask(){
     this._router.navigate(['/create-task']),{
       
@@ -121,6 +129,7 @@ export class ProfileComponent implements OnInit {
           localStorage.setItem('task', JSON.stringify(tasks));
   
           alert('ลบ Task เสร็จสิ้น');
+          window.location.reload();
         } else {
           console.error('ไม่พบ Task ที่ตรงกับ ID ที่ต้องการลบ');
         }
