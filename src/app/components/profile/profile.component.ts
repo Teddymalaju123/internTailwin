@@ -114,9 +114,10 @@ export class ProfileComponent implements OnInit {
         const taskIndex = tasks.findIndex(task => task.id === id);
         if (taskIndex !== -1) {
           tasks.splice(taskIndex, 1);
+
           localStorage.setItem('task', JSON.stringify(tasks));
           alert('ลบ Task เสร็จสิ้น');
-          window.location.reload();
+          this.getTasks();
         } else {
           console.error('ไม่พบ Task ที่ตรงกับ ID ที่ต้องการลบ');
         }

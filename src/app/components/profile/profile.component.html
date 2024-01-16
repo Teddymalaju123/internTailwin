@@ -39,7 +39,7 @@
       </div>
       <div class="flex justify-between mt-3">
         <p class="text-white">Date : {{item.date | dateFormat}}</p>
-        <button class="bg-amber-600 rounded-md border-solid border-2 border-rose-500 px-6 text-black not-italic text-sm fa-solid fa-trash" (click)="deleteTask(item.id)">ลบ</button>
+        <button class="bg-amber-600 rounded-md border-solid border-2 border-rose-500 px-6 text-black not-italic text-sm fa-solid fa-trash" (click)="deleteTask(item.id);$event.stopPropagation()">ลบ</button>
       </div>
     </div>
   </div>
