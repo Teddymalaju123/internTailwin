@@ -43,21 +43,14 @@ export class ProfileDetailComponent implements OnInit {
   }
 
   getTaskById(id: number): void {
-    // ดึงข้อมูลทั้งหมดจาก Local Storage
     console.log('Calling getTaskById with ID:', id);
     const storedData = localStorage.getItem('task');
     console.log('Stored Data from localStorage:', storedData);
-  
     if (storedData) {
         const tasks: LocalTask[] = JSON.parse(storedData);
-  
-        // ค้นหา task ที่ตรงกับ ID ที่รับมา
         const foundTask = tasks.find(task => task.id === id);
-  
         if (foundTask) {
-            // ตั้งค่าฟอร์ม validateForm ด้วยข้อมูลที่ได้
             console.log('Found Task:', foundTask);
-            // ตั้งค่า tasksLocal ด้วยข้อมูลที่ได้
             this.tasksLocal = [foundTask];
         } else {
             console.error('ไม่พบ Task ที่ตรงกับ ID');

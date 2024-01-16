@@ -47,8 +47,6 @@ export class ProfileComponent implements OnInit {
   getTasks() {
     const storedTasks = localStorage.getItem('task');
     this.tasks = storedTasks ? JSON.parse(storedTasks) : [];
-    
-    // เลือก task แรกเพื่อแสดงใน tasksLocal
     this.tasksLocal = this.tasks.length > 0 ? this.tasks[0] : { id: '', topic: '', description: '', date: '' };
   }
 
@@ -109,25 +107,14 @@ export class ProfileComponent implements OnInit {
 
   deleteTask(id: number): void {
     const confirmDelete = window.confirm('ต้องการลบใช่หรือไม่');
-    
     if (confirmDelete) {
-      // ดึงข้อมูลทั้งหมดจาก Local Storage
       const storedTasks = localStorage.getItem('task');
-  
       if (storedTasks) {
-        // แปลงข้อมูลทั้งหมดเป็น array
         const tasks: LocalTask[] = JSON.parse(storedTasks);
-  
-        // ค้นหา index ของ task ที่ตรงกับ ID ที่ต้องการลบ
         const taskIndex = tasks.findIndex(task => task.id === id);
-  
         if (taskIndex !== -1) {
-          // ลบ task ที่ต้องการ
           tasks.splice(taskIndex, 1);
-  
-          // บันทึกข้อมูลทั้งหมดลงใน Local Storage
           localStorage.setItem('task', JSON.stringify(tasks));
-  
           alert('ลบ Task เสร็จสิ้น');
           window.location.reload();
         } else {

@@ -22,25 +22,16 @@ export class CreateTaskComponent implements OnInit{
 
   createTopic() {
     if (this.validateForm.valid) {
-      // ดึงข้อมูลที่มีอยู่ใน Local Storage ก่อน
       const storedData = localStorage.getItem("task");
       let existingData = storedData ? JSON.parse(storedData) : [];
-  
-      // คำนวณ ID ใหม่โดยใช้จำนวน Task ที่มีอยู่แล้ว
       const taskId = existingData.length + 1;
-  
-      // เพิ่มข้อมูลใหม่ลงในอาเรย์
       const newData = {
         id: taskId,
         ...this.validateForm.value,
-        date: new Date().toISOString(), // เพิ่มเวลาปัจจุบัน
+        date: new Date().toISOString(), 
       };
-  
       existingData = existingData.concat(newData);
-  
-      // บันทึกข้อมูลใหม่ลงใน Local Storage
       localStorage.setItem("task", JSON.stringify(existingData));
-  
       this._router.navigate(['/profile']);
       alert("สร้าง Task เสร็จสิ้น");
     }
