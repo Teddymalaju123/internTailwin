@@ -17,9 +17,9 @@
           <div class="mt-4">
             <form [formGroup]="validateForm">
             <p class="text-sm text-black" for="topic">Topic</p>
-            <input  class="bg-gray-300 rounded-md border-solid border-2 border-red-900 pr-44 mt-2" type="text" id="topic" formControlName="topic">
+            <input  class="bg-gray-300 rounded-md border-solid border-2 border-red-900 pr-44 mt-2" type="text" id="topic" formControlName="topic" required>
             <p class="text-sm text-black mt-4" for="description">Description</p>
-            <textarea class="bg-gray-300 rounded-md border-solid border-2 border-red-900 pr-52 pb-32 mt-2" type="text" id="topic" formControlName="description"></textarea>
+            <textarea class="bg-gray-300 rounded-md border-solid border-2 border-red-900 pr-52 pb-32 mt-2" type="text" id="topic" formControlName="description" required></textarea>
             </form>
           </div>
         </div>
