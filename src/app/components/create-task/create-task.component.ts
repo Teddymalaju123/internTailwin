@@ -40,8 +40,4 @@ export class CreateTaskComponent implements OnInit{
   back(){
     this._router.navigate(['/profile'])
   }
-
-  submit(){
-    this._router.navigate(['/profile'])
-  }
 }
